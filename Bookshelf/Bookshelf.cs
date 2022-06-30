@@ -1,40 +1,44 @@
-﻿namespace Bookshelf;
+﻿using System.Collections.Generic;
 
-internal class Bookshelf {
+namespace Bookshelf {
 
-	public int BookCount => _shelf.Count;
-	
-	private readonly List<Book> _shelf = new();
-	private readonly string _filename = "Bookshelf.json";
+	internal class Bookshelf {
 
-	public Bookshelf () {}
+		public int BookCount => _shelf.Count;
 
-	public Bookshelf (string filename) {
-		_filename = filename;
-	}
+		private readonly List<Book> _shelf = new();
+		private readonly string _filename = "Bookshelf.json";
 
-	public void Load () {
-		_shelf.AddRange(IOManager.LoadList<Book>(_filename));
-	}
+		public Bookshelf () { }
 
-	public void Save () {
-		_shelf.Save(_filename);
-	}
+		public Bookshelf (string filename) {
+			_filename = filename;
+		}
 
-	public List<Book> Get (Genre genre) {
-		return _shelf.FindAll(book => book.Genre == genre);
-	}
+		public void Load () {
+			_shelf.AddRange(IOManager.LoadList<Book>(_filename));
+		}
 
-	public void Add (Book book) {
-		_shelf.Add(book);
-	}
+		public void Save () {
+			_shelf.Save(_filename);
+		}
 
-	public void Remove (Book book) {
-		_shelf.Remove(book);
-	}
+		public List<Book> Get (Genre genre) {
+			return _shelf.FindAll(book => book.Genre == genre);
+		}
 
-	public void Clear () {
-		_shelf.Clear();
+		public void Add (Book book) {
+			_shelf.Add(book);
+		}
+
+		public void Remove (Book book) {
+			_shelf.Remove(book);
+		}
+
+		public void Clear () {
+			_shelf.Clear();
+		}
+
 	}
 
 }

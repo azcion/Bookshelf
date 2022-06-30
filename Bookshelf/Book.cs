@@ -1,20 +1,22 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Bookshelf; 
+namespace Bookshelf {
 
-internal readonly struct Book {
+	internal record Book {
 
-	public string Title { get; init; }
-	public string[] Authors { get; init; }
-	public Genre Genre { get; init; }
-	public string Content { get; }
+		public string Title { get; init; }
+		public string[] Authors { get; init; }
+		public Genre Genre { get; init; }
+		public string Content { get; }
 
-	[JsonConstructor]
-	public Book (string title, string[] authors, Genre genre, string content) {
-		Title = title;
-		Authors = authors;
-		Genre = genre;
-		Content = content;
+		[JsonConstructor]
+		public Book (string title, string[] authors, Genre genre, string content) {
+			Title = title;
+			Authors = authors;
+			Genre = genre;
+			Content = content;
+		}
+
 	}
 
 }

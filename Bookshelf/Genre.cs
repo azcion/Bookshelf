@@ -1,14 +1,16 @@
-﻿namespace Bookshelf;
+﻿namespace Bookshelf {
 
-public enum Genre {
+	public enum Genre {
 
-	None,
-	Fantasy,
-	SciFi,
-	Adventure,
-	Romance,
-	Biography,
-	Cooking,
-	History
+		None,
+		Fantasy,
+		SciFi,
+		Adventure,
+		Romance,
+		Biography,
+		Cooking,
+		History
+
+	}
 
 }

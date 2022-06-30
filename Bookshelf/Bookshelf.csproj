@@ -7,10 +7,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Reference Include="Mathy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>..\..\Mathy\Mathy\bin\Release\net6.0\Mathy.dll</HintPath>
-      </Reference>
-    </ItemGroup>
+	<ItemGroup>
+		<Reference Include="Mathy">
+			<HintPath>Mathy.dll</HintPath>
+		</Reference>
+	</ItemGroup>
 
 </Project>
